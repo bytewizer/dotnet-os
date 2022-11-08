@@ -20,8 +20,8 @@ DOTNETUSERADD_COMMAND ?= "\
 "
 
 EXTRA_USERS_PARAMS = "\
-    groupadd ${DOTNET_USER_GROUP}; \
-	useradd  ${DOTNETUSERADD_COMMAND}; \
-    usermod -p '${DOTNET_USER_PASSWORD_ENCRYPTED}' ${DOTNET_USER_NAME}; \
-    ${@bb.utils.contains('DISABLE_ROOT', '0', "usermod -L root;", "usermod -p '${ROOT_PASSWORD_ENCRYPTED}' root;", d)} \
+  groupadd ${DOTNET_USER_GROUP}; \
+  useradd  ${DOTNETUSERADD_COMMAND}; \
+  usermod -p '${DOTNET_USER_PASSWORD_ENCRYPTED}' ${DOTNET_USER_NAME}; \
+  ${@bb.utils.contains('DISABLE_ROOT', '0', "usermod -L root;", "usermod -p '${ROOT_PASSWORD_ENCRYPTED}' root;", d)} \
 "

@@ -6,4 +6,4 @@ KernelCommandLine=!nfsroot
 DHCP=v4
 
 [DHCPv4]
-UseHostname=true
+UseHostname=false
