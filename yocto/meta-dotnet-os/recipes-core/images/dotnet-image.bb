@@ -7,15 +7,18 @@ require recipes-core/images/core-image-minimal.bb
 
 # inherit os-users
 
+# Default packages to exclude
+PACKAGE_EXCLUDE = "ifupdown networkd dnsmasq"
+
 # Additional installed packages
 IMAGE_INSTALL += " \
 	kernel-modules \
 	linux-firmware-bcm43430 \
 	linux-firmware-bcm43455 \
-	wpa-supplicant \
 	bluez5 \
 	iptables \
-	init-ifupdown \
+	networkmanager \
+	less \
 	openssh \ 
 	openssh-sftp-server \
 	openssl \
@@ -29,8 +32,4 @@ IMAGE_INSTALL += " \
 	curl \
 	dotnet \
 	vsdbg-dbg \
-	userland \
-    rpio \
-    rpi-gpio \
-	hostapd \
 "
