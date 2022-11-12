@@ -1,2 +1,2 @@
-PACKAGECONFIG:append = " resolved"
+PACKAGECONFIG:append = " networkd resolved"
 RDEPENDS:${PN}:append = " wpa-supplicant"
