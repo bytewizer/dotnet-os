@@ -30,6 +30,7 @@ RDEPENDS:roslynos-base-utilities = "\
     iw \
     nano \
 	sudo \
+	vsdbg \
 	usbutils \
     libgpiod \
 	libgpiod-tools \

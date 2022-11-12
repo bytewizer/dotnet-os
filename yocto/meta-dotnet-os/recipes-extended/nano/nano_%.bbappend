@@ -7,11 +7,16 @@ SRC_URI += " \
     file://nanorc \
 "
 
+do_configure:append() {
+   export EDITOR="nano"
+}
+
 do_install:append() {
 
-    mkdir -p ${D}${datadir}/nano
+    install -d ${D}${datadir}/nano
     install -m 644 ${WORKDIR}/csharp.nanorc ${D}${datadir}/nano
 
     install -d ${D}${sysconfdir}
 	install -m 644 ${WORKDIR}/nanorc ${D}${sysconfdir}
+
 }

@@ -6,21 +6,24 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 SRC_URI[sha256sum] = "80cde072ac882eb0882bfb9a6bb511ceaa05c022be97715ebd2f9eafaad29182"
 SRC_URI = "https://vsdebugger.azureedge.net/vsdbg-17-2-10518-1/vsdbg-linux-arm64.tar.gz;unpack=0"
 
-RDEPENDS:${PN}-dbg = "\
+RDEPENDS:${PN} = "\
     zlib \
 "
 
-FILES:${PN}-dbg += "\
-    ${ROOT_HOME}/.vsdbg \
+FILES:${PN} += "\
+    ${datadir}/vsdbg \
 "
 
-PACKAGES = "${PN} ${PN}-dbg"
-
-#do_configure[noexec] = "1"
+do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
 do_install() {
-    install -d ${D}${ROOT_HOME}/.vsdbg
-    tar -xvzf ${WORKDIR}/vsdbg-linux-arm64.tar.gz -C ${D}${ROOT_HOME}/.vsdbg
-    chmod +x ${D}${ROOT_HOME}/.vsdbg/vsdbg
+    install -d ${D}${datadir}/vsdbg
+    tar -xpvzf ${WORKDIR}/vsdbg-linux-arm64.tar.gz -C ${D}${datadir}/vsdbg
+    chmod +x ${D}${datadir}/vsdbg/vsdbg
+
+    install -d ${D}${bindir}
+    ln -rs ${D}${datadir}/vsdbg/vsdbg ${D}${bindir}/vsdbg
 }
+
+INSANE_SKIP_${PN} += "libdir"
