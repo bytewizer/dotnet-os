@@ -4,3 +4,4 @@ build/*
 !build/conf
 build/conf/*
 !build/conf/local.conf
+!build/conf/conf-notes.txt
