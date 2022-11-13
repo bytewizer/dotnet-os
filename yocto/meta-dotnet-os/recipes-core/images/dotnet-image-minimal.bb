@@ -8,4 +8,5 @@ include recipes-core/images/core-image-minimal.bb
 CORE_IMAGE_EXTRA_INSTALL += "\
     roslynos-core-packagegroup \
     roslynos-base-packagegroup \
+    dotnet-sdk-v7 \
 "

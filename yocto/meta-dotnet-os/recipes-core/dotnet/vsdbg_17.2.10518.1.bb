@@ -26,4 +26,4 @@ do_install() {
     ln -rs ${D}${datadir}/vsdbg/vsdbg ${D}${bindir}/vsdbg
 }
 
-INSANE_SKIP_${PN} += "libdir"
+INSANE_SKIP:${PN} += "libdir"
