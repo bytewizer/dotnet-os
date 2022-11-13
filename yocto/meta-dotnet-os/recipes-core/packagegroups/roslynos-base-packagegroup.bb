@@ -9,13 +9,15 @@ inherit packagegroup
 PACKAGES = "\
     roslynos-base-packagegroup \
     roslynos-base-connectivity \
+	roslynos-base-gpio \
     roslynos-base-utilities"
 
 RDEPENDS:${PN} = "\
     roslynos-base-connectivity \
+	roslynos-base-gpio \
     roslynos-base-utilities"
 
-SUMMARY:roslynos-base-connectivity = "Connectivity utilities"
+SUMMARY:roslynos-base-connectivity = "Connectivity Packages"
 RDEPENDS:roslynos-base-connectivity = "\
 	hostapd \
 	dnsmasq \
@@ -25,13 +27,16 @@ RDEPENDS:roslynos-base-connectivity = "\
 	iptables \
     curl"
 
-SUMMARY:roslynos-base-utilities = "General utilities"
-RDEPENDS:roslynos-base-utilities = "\
-    iw \
-    nano \
-	sudo \
-	vsdbg \
-	usbutils \
+SUMMARY:roslynos-base-gpio = "Gpio Packages"
+RDEPENDS:roslynos-base-gpio = "\
     libgpiod \
 	libgpiod-tools \
 	i2c-tools"
+
+SUMMARY:roslynos-base-utilities = "General Packages"
+RDEPENDS:roslynos-base-utilities = "\
+    iw \
+    bash \
+	nano \
+	sudo \
+	usbutils"
