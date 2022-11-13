@@ -1,5 +1,5 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-UBOOT_NO_DELAY ?= "1"
+UBOOT_DELAY ?= "1"
 
-SRC_URI += "${@bb.utils.contains('UBOOT_NO_DELAY', '1', 'file://no-boot-delay.cfg', '', d)}"
+SRC_URI += "${@bb.utils.contains('UBOOT_DELAY', '0', 'file://no-boot-delay.cfg', '', d)}"
