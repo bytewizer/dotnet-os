@@ -1,9 +1,6 @@
-# Busybox installs sh with priority 50.
-# Set bash priority less than that to get ignored in alternatives.
-# ALTERNATIVE_PRIORITY = "10"
+ALTERNATIVE_PRIORITY[sh] = "100"
+ALTERNATIVE_TARGET[sh] = "${base_bindir}/bash.bash"
 
-pkg_prerm:${PN} () {
-  # Remove /bin/bash from shell alternatives
-  # update-alternatives --remove sh /bin/bash
-  # update-alternatives --install /bin/sh sh /bin/bash 100
-}
+ALTERNATIVE:${PN} += "bash"
+ALTERNATIVE_PRIORITY[bash] = "40"
+ALTERNATIVE_LINK_NAME[bash] = "${base_bindir}/bash"

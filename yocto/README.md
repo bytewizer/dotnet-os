@@ -17,6 +17,14 @@ $ ./run-build.sh
 
 ## WIFI Setup
 
+```bash
+mkdir -p /etc/wpa_supplicant
+cp /etc/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+systemctl start wpa_supplicant@wlan0 
+systemctl enable wpa_supplicant@wlan0
+```
+
+
 ### Identify Wifi Access Points
 ```bash
 $ nmcli dev wifi list

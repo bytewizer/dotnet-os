@@ -6,7 +6,7 @@ SRC_URI += " \
 
 #SYSTEMD_PACKAGES = "${PN}"
 SYSTEMD_SERVICE:${PN} = "wpa_supplicant-nl80211@wlan0.service"
-SYSTEMD_AUTO_ENABLE:${PN} = "enable"
+SYSTEMD_AUTO_ENABLE:${PN} = "disable"
 
 do_install:append () {
       

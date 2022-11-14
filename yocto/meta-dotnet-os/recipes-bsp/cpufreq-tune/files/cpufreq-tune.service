@@ -1,9 +1,0 @@
-[Unit]
-Description=Set cpu @@RETRO_CPUPOWER_GOVERNOR@@ governor
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/cpupower frequency-set -g @@RETRO_CPUPOWER_GOVERNOR@@
-
-[Install]
-WantedBy=sysinit.target

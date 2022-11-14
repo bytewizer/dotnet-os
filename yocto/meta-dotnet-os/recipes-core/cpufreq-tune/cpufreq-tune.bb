@@ -1,4 +1,3 @@
-SUMMARY = "qml-forward-gallery autostart service"
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 LICENSE = "MIT"
