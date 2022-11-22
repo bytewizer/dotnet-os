@@ -55,6 +55,7 @@ install() {
 
 clean() {
     echo -e "Removing sstate cache, downloads and tmp directories\n"
+    # bitbake -c cleanall [package]
     sudo rm -rf ./build/sstate-cache/
     sudo rm -rf ./build/downloads/
     sudo rm -rf ./build/tmp/

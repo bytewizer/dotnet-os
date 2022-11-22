@@ -2,8 +2,8 @@ inherit extrausers
 
 DOTNET_USER_ID ?= "1000"
 DOTNET_USER_GROUP ?= "users"
-DOTNET_USER_NAME ??= "roslyn"
-DOTNET_USER_PASSWORD ??= "roslynos"
+DOTNET_USER_NAME ??= "vs"
+DOTNET_USER_PASSWORD ??= "dotnet"
 DOTNET_USER_PASSWORD_ENCRYPTED ??= "$(openssl passwd -5 ${DOTNET_USER_PASSWORD})"
 
 ROOT_PASSWORD ??= "roslynos"

@@ -7,15 +7,15 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit packagegroup
 
 PACKAGES = "\
-    roslynos-base-packagegroup \
-    roslynos-base-connectivity \
+	roslynos-base-packagegroup \
+	roslynos-base-connectivity \
 	roslynos-base-gpio \
-    roslynos-base-utilities"
+	roslynos-base-utilities"
 
 RDEPENDS:${PN} = "\
-    roslynos-base-connectivity \
+	roslynos-base-connectivity \
 	roslynos-base-gpio \
-    roslynos-base-utilities"
+	roslynos-base-utilities"
 
 SUMMARY:roslynos-base-connectivity = "Connectivity Packages"
 RDEPENDS:roslynos-base-connectivity = "\
@@ -25,7 +25,7 @@ RDEPENDS:roslynos-base-connectivity = "\
 	openssh-sftp-server \
 	openssl \
 	iptables \
-    curl"
+	curl"
 
 SUMMARY:roslynos-base-gpio = "Gpio Packages"
 RDEPENDS:roslynos-base-gpio = "\
@@ -35,8 +35,7 @@ RDEPENDS:roslynos-base-gpio = "\
 
 SUMMARY:roslynos-base-utilities = "General Packages"
 RDEPENDS:roslynos-base-utilities = "\
-    iw \
-    bash \
+	iw \
+	bash \
 	nano \
-	sudo \
-	usbutils"
+	sudo"

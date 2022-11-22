@@ -20,4 +20,5 @@ RDEPENDS:${PN} = "\
     tar \
     usbutils \
     util-linux \
+    git \
     wget"
