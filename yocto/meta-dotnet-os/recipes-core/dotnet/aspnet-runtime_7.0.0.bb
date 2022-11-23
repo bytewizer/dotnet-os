@@ -8,7 +8,7 @@ ASPNET_FETCH_ID = "2d6d851a-4eea-4a7a-9d5e-f1d6cdccda29/366a3dd90251ce11d8c5191a
 SRC_URI[sha256sum] = "6e8698b13ddd26d2809f5e53f8a0e5a7c7703ab8f20ba7f08c2ff49002cf5caa"
 SRC_URI = "https://download.visualstudio.microsoft.com/download/pr/${ASPNET_FETCH_ID}/aspnetcore-runtime-${PV}-linux-arm64.tar.gz;unpack=0"
 
-INSANE_SKIP:${PN} += "libdir"
+INSANE_SKIP:${PN} = "already-stripped libdir staticdev"
 
 DEPENDS = "patchelf-native"
 
@@ -22,8 +22,6 @@ RDEPENDS:${PN} = "\
 FILES:${PN} += "\
     ${datadir}/dotnet \
 "
-INSANE_SKIP:${PN} = "already-stripped libdir staticdev"
-
 # do_configure[noexec] = "1"
 # do_compile[noexec] = "1"
 
@@ -37,6 +35,6 @@ do_install() {
     ln -rs ${D}${datadir}/dotnet/dotnet ${D}${bindir}/dotnet
 
     # Hack to fix liblttng-ust dependency issues
-    patchelf --remove-needed liblttng-ust.so.0 ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/7.0.0/libcoreclrtraceptprovider.so
+    patchelf --remove-needed liblttng-ust.so.0 ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App/${PV}/libcoreclrtraceptprovider.so
 
 }
