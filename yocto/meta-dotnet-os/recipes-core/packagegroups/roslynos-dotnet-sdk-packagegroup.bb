@@ -6,4 +6,5 @@ inherit packagegroup
 
 RDEPENDS:${PN} = "\
     vsdbg \
+    powershell \
     dotnet-sdk"
