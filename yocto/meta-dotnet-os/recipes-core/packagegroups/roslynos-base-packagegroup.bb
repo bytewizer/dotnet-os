@@ -24,7 +24,9 @@ RDEPENDS:roslynos-base-connectivity = "\
 	openssh \ 
 	openssh-sftp-server \
 	openssl \
+	ufw \
 	iptables \
+	htop \
 	curl"
 
 SUMMARY:roslynos-base-gpio = "Gpio Packages"

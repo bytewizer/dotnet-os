@@ -9,6 +9,8 @@ include recipes-core/images/core-image-minimal.bb
 # Setup default user and passwords
 inherit deviceos-users
 
+IMAGE_INSTALL:remove = "top"
+
 # Additional application configuration
 CORE_IMAGE_EXTRA_INSTALL += "\
     roslynos-core-packagegroup \
